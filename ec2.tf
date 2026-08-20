@@ -10,7 +10,7 @@ resource "aws_instance" "terraform" {
 
 resource "aws_security_group" "allow_all" {
 
-    name = "My-SG"
+    name = "My-Security-Group"
 
     #Incoming traffic or inbound rules = ingress
     ingress {
