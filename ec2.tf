@@ -3,6 +3,5 @@ resource "aws_instance" "terraform" {
     instance_type = "t3.micro"
 
     tags = {
-        Name = "Hello Srikanth"
-    }
+        Name = "Hello"
 }
