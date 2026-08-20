@@ -10,6 +10,8 @@ resource "aws_instance" "terraform" {
 
 resource "aws_security_group" "allow_all" {
 
+    name = "My-SG"
+
     #Incoming traffic or inbound rules = ingress
     ingress {
         from_port = 0 #from port 0 to all ports
