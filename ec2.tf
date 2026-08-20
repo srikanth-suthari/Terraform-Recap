@@ -4,4 +4,5 @@ resource "aws_instance" "terraform" {
 
     tags = {
         Name = "Hello"
+    }
 }
