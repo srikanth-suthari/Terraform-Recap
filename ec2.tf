@@ -26,7 +26,7 @@ resource "aws_security_group" "allow_all" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 
-    tags = {
-        Name = "My-SG"
-    }
+    # tags = {
+    #     Name = "My-SG"
+    # }
 }
