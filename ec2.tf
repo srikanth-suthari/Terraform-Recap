@@ -29,7 +29,7 @@ resource "aws_security_group" "allow_all" {
     }
 
     tags = {
-        Name = "My-SG"
+        # Name = "My-SG"
         terraform = "true"
     }
 }
