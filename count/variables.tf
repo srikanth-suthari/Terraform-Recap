@@ -15,5 +15,5 @@ variable "zone_id" {
 
 variable "domain_name" {
     type = string
-    default = "www.srikanth-suthari.me"
+    default = "srikanth-suthari.me"
 }
