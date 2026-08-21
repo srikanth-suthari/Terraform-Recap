@@ -1,4 +1,5 @@
 resource "aws_route53_record" "roboshop" {
+    count = 10
     zone_id = var.zone_id
     ttl = 1
     type = "A"
