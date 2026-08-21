@@ -5,3 +5,7 @@
 output "instances_ips" {
     value = aws_instance.terraform.*.public_ip
 }
+
+output "instances_ips" {
+    value = aws_instance.terraform.*.private_ip
+}
