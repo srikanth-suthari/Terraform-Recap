@@ -1,6 +1,6 @@
 resource "aws_instance" "terraform" {
     ami = var.environment == "dev" ? "t3.micro" : "t3.small"
-    ami = var.environemt == "prod" ? "t3.large" : "t2.micro"
+    # ami = var.environemt == "prod" ? "t3.large" : "t2.micro"
     # instance_type = "t3.micro"
     vpc_security_group_ids = [aws_security_group.allow_all.id]
     tags = {
