@@ -1,0 +1,53 @@
+resource "aws_instance" "terraform" {
+    ami = var.ami_id
+    instance_type = var.instance_type
+    vpc_security_group_ids = [aws_security_group.allow_all.id]
+    tags = var.ec2_tags
+}
+
+resource "aws_security_group" "allow_all" {
+
+    name = "My-Security-Group"
+
+    #Incoming traffic or inbound rules = ingress
+    ingress {
+        from_port = 0 #from port 0 to all ports
+        to_port = 0
+        protocol = "-1" # -1 means all protocols like tcp/udp/http/https etc
+        cidr_blocks = ["0.0.0.0/0"]     #from internet (all networks)
+    }
+
+    ingress {
+        from_port   = 80
+        to_port     = 80
+        protocol    = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port   = 443
+        to_port     = 443
+        protocol    = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port   = 8080
+        to_port     = 8080
+        protocol    = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    #Outgoing traffic or outbound rules = egress
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    tags = {
+        Name = "My-SG"
+        terraform = "true"
+    }
+}
