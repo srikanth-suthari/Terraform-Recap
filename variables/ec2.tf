@@ -41,7 +41,7 @@ resource "aws_security_group" "allow_all" {
     #Outgoing traffic or outbound rules = egress
     egress {
         from_port = var.egress_from_port
-        to_port = var.ingress_to_port
+        to_port = var.egress_to_port
         protocol = var.protocol
         cidr_blocks = var.egress_cidr
     }
