@@ -4,5 +4,5 @@
 # }
 
 variable "instance_name" {
-    default = [1,2,3,4]
+    default = ["mongodb", "mysql", "rabbitmq", "redis"]
 }
