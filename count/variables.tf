@@ -3,10 +3,6 @@
 #     default = ""
 # }
 
-variable "instance_count" {
-    default = 4
-}
-
 variable "instance_name" {
-    default = ["linux"]
+    default = [1,2,3,4]
 }
