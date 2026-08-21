@@ -1,3 +1,12 @@
 resource "aws_route53_records" "roboshop" {
-    
+    zone_id = var.zone_id
+    domain_name = var.domain_name
+    ttl = 1
+    type = "A"
+
+    # Interpolation of two variables to get as a single name
+    name = "${var.instance_name[count.index]}.${var.domain_name}"
+
+    # Taking the output of instance_name and iterating through the private_ips of the instances
+    records = [aws_instance.instance_name[count.index].private_ip]
 }
