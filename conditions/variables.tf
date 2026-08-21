@@ -8,7 +8,7 @@ variable "environment" {
     default = "dev"
 }
 
-# variable "environment" {
-#     type = string
-#     default = "prod"
-# }
+variable "environment" {
+    type = string
+    default = "prod"
+}
