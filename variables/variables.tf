@@ -44,6 +44,11 @@ variable "ingress_http_to_port" {
     default = 80
 }
 
+variable "http_protocol" {
+    type = string
+    default = "TCP"
+}
+
 variable "egress_from_port" {
     default = 0
 }
