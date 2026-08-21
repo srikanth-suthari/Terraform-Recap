@@ -4,5 +4,6 @@
 # }
 
 variable "instance_name" {
-    default = ["mongodb", "mysql", "rabbitmq", "redis"]
+    type = list
+    default = ["mongodb", "mysql", "rabbitmq", "redis", "catalogue", "user", "cart", "shipping", "payment", "dispatch"]
 }
