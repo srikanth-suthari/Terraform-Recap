@@ -33,11 +33,11 @@ variable "ingress_from_port" {
 }
 
 variable "ingress_to_port" {
-    default = 0
+    default = 80
 }
 
 variable "ingress_http_from_port" {
-    default = 0
+    default = 80
 }
 
 variable "ingress_http_to_port" {
