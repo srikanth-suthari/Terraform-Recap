@@ -1,6 +1,5 @@
-resource "aws_route53_records" "roboshop" {
+resource "aws_route53_record" "roboshop" {
     zone_id = var.zone_id
-    domain_name = var.domain_name
     ttl = 1
     type = "A"
 
@@ -9,4 +8,5 @@ resource "aws_route53_records" "roboshop" {
 
     # Taking the output of instance_name and iterating through the private_ips of the instances
     records = [aws_instance.instance_name[count.index].private_ip]
+    allow_overwrite = true
 }
