@@ -8,5 +8,5 @@ variable "instance_count" {
 }
 
 variable "instance_name" {
-    default = [1,2,3,4]
+    default = ["linux"]
 }
