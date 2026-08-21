@@ -14,7 +14,7 @@ resource "aws_security_group" "allow_all" {
 
     #Incoming traffic or inbound rules = ingress
     ingress {
-        from_port = [22, 80] #from port 0 to all ports
+        from_port = ["22", "80"] #from port 0 to all ports
         to_port = 0
         protocol = "-1" # -1 means all protocols like tcp/udp/http/https etc
         cidr_blocks = ["0.0.0.0/0"]     #from internet (all networks)
