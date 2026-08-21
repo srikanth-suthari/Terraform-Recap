@@ -17,12 +17,12 @@ resource "aws_security_group" "allow_all" {
         cidr_blocks = var.ingress_cidr     #from internet (all networks)
     }
 
-    # ingress {
-    #     from_port   = 80
-    #     to_port     = 80
-    #     protocol    = "tcp"
-    #     cidr_blocks = ["0.0.0.0/0"]
-    # }
+    ingress {
+        from_port   = var.ingress_http_from_port
+        to_port     = var.ingress_http_to_port
+        protocol    = var.protocol
+        cidr_blocks = var.ingress_cidr
+    }
 
     # ingress {
     #     from_port   = 443

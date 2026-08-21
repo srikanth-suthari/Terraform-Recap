@@ -36,6 +36,14 @@ variable "ingress_to_port" {
     default = 0
 }
 
+variable "ingress_http_from_port" {
+    default = 0
+}
+
+variable "ingress_http_to_port" {
+    default = 0
+}
+
 variable "egress_from_port" {
     default = 0
 }
