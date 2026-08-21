@@ -3,7 +3,10 @@
 #     default = ""
 # }
 
+variable "instance_count" {
+    default = 4
+}
+
 variable "instance_name" {
-    type = string
-    default = "Linux"
+    default = [1,2,3,4]
 }
