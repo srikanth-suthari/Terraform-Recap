@@ -1,3 +1,3 @@
 output "instances_output" {
-    value = aws_instance.instance_names
+    value = aws_instance.terraform
 }
