@@ -1,4 +1,11 @@
 variable "instance_name" {
-    type = list
-    default = ["mongodb", "mysql", "rabbitmq", "redis", "catalogue", "user", "cart", "shipping", "payment", "dispatch"]
+    type = map
+    default = {
+        mongo = "t3.micro"
+        mysql = "t3.small"
+    }
 }
+
+# variable "owner_info" {
+#     default = "973714476881"
+# }
