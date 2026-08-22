@@ -3,5 +3,5 @@
 # }
 
 output "instances_private_ips" {
-    value = aws_instance.terraform.*.private_ip
+    value = aws_instance.terraform.*
 }
