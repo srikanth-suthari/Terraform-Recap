@@ -2,6 +2,7 @@ resource "aws_instance" "terraform" {
     for_each = var.instance_name
     ami = "ami-0220d79f3f480ecf5"
     instance_type = each.value
+    associate_public_ip_address = false
     vpc_security_group_ids = [aws_security_group.allow_all.id]
     tags = {
         Name = each.key
