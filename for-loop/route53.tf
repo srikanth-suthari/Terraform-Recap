@@ -1,5 +1,5 @@
 resource "aws_route53_record" "roboshop" {
-    for_each = aws_instance.terraform
+    for_each = aws_instance.terrafor m     #here we are looping the instances
     zone_id = var.zone_id
     ttl = 1
     type = "A"
