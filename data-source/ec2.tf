@@ -1,3 +1,3 @@
 resource "aws_instance" "ec2_instance" {
-    ami = 
+    ami = var.ami_id
 }
