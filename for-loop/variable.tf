@@ -6,6 +6,10 @@ variable "instance_name" {
     }
 }
 
+variable "ami_id" {
+    default = "ami-0220d79f3f480ecf5"
+}
+
 variable "zone_id" {
     default = "Z04492443PE4G96M3YA8"
 }

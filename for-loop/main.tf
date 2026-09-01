@@ -1,6 +1,6 @@
 resource "aws_instance" "terraform" {
     for_each = var.instance_name
-    ami = "ami-0220d79f3f480ecf5"
+    ami = var.ami_id
     instance_type = each.value
     vpc_security_group_ids = [aws_security_group.allow_all.id]
     # associate_public_ip_address = false
