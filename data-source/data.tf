@@ -1,6 +1,6 @@
-data "aws_ami" "joindevops" {
-    owners           = ["973714476881"]
-    most_recent      = true
+data "aws_ami" "srikanth" {
+    owners = ["973714476881"]
+    most_recent = true
 
     filter {
         name   = "name"
@@ -19,13 +19,13 @@ data "aws_ami" "joindevops" {
 }
 
 output "ami_id" {
-    value = data.aws_ami.joindevops.id
+    value = data.aws_ami.srikanth.id
 }
 
-data "aws_instance" "mongodb" {
-    instance_id = "i-0355f99cd46d41298"
-}
+# data "aws_instance" "mongodb" {
+#     instance_id = "i-0355f99cd46d41298"
+# }
 
-output "mongodb_info" {
-    value = data.aws_instance.mongodb.public_ip
-}
+# output "mongodb_info" {
+#     value = data.aws_instance.mongodb.public_ip
+# }
