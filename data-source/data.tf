@@ -30,3 +30,8 @@ output "mongodb_info" {
     #value = data.aws_instance.terraform.public_ip
     value = data.aws_instance.mongodb.private_ip
 }
+
+output "mongodb_info" {
+    #value = data.aws_instance.terraform.public_ip
+    value = data.aws_instance.mongodb.instance_type
+}
