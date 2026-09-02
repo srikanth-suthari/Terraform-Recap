@@ -22,11 +22,11 @@
 #     value = data.aws_ami.join-devops-ami.id
 # }
 
-data "aws_instance" "terraform" {
+data "aws_instance" "mongodb" {
     instance_id = "i-0cec471f1d9c08c34"
 }
 
 output "mongodb_info" {
     #value = data.aws_instance.terraform.public_ip
-    value = data.aws_instance.terraform.private_ip
+    value = data.aws_instance.mongodb.private_ip
 }
