@@ -10,9 +10,9 @@ variable "ami_id" {
     default = "ami-0220d79f3f480ecf5"
 }
 
-# variable "zone_id" {
-#     default = "Z04492443PE4G96M3YA8"
-# }
+variable "zone_id" {
+    default = "Z04492443PE4G96M3YA8"
+}
 
 variable "domain_name" {
     type = string
