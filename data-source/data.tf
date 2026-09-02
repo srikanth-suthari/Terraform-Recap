@@ -27,5 +27,6 @@ data "aws_instance" "terraform" {
 }
 
 output "mongodb_info" {
-    value = data.aws_instance.terraform.public_ip
+    #value = data.aws_instance.terraform.public_ip
+    value = data.aws_instance.terraform.private_ip
 }
