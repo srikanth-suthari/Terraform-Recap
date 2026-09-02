@@ -1,6 +1,6 @@
-data "aws_ami" "srikanth" {
+data "aws_ami" "join-devops-ami" {
     owners = ["973714476881"]
-    most_recent = true
+    most_recent= true
 
     filter {
         name   = "name"
@@ -19,7 +19,7 @@ data "aws_ami" "srikanth" {
 }
 
 output "ami_id" {
-    value = data.aws_ami.srikanth.id
+    value = data.aws_ami.join-devops-ami.id
 }
 
 # data "aws_instance" "mongodb" {
