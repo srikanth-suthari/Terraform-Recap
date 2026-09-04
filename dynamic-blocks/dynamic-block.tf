@@ -14,17 +14,21 @@ resource "aws_security_group" "ec2_security_group" {
     name = "${local.common_name}-dynamic-sg"
     description = "Created using dynamic blocks"
 
-    dynamic "ingress" {
-        for_each = local.ingress_rules
-        iterator = rule         # Renaming the iterator name from ingress to rule
+    # #Iterating through a list of ingress rules
+    # dynamic "ingress" {
+    #     for_each = local.ingress_rules
+    #     iterator = rule         # Renaming the iterator name from ingress to rule
 
-        content {
-            from_port = rule.value
-            to_port = rule.value
-            protocol = "tcp"
-            cidr_blocks = ["0.0.0.0/0"]
-        }
-    }
+    #     content {
+    #         from_port = rule.value
+    #         to_port = rule.value
+    #         protocol = "tcp"
+    #         cidr_blocks = ["0.0.0.0/0"]
+    #     }
+    # }
+
+    #Iterating through map of ingress rules
+    
 
     egress {
         description = "Allow all traffic"
