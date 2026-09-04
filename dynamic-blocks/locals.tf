@@ -1,7 +1,7 @@
 locals {
     ami_id = var.ami_id
-    ingress_rules = var.ingress_rules_list
-    #ingress_rules = var.ingress_rules_map
+    #ingress_rules = var.ingress_rules_list
+    ingress_rules = var.ingress_rules_map
     instance_type = var.instance_type
     common_name = "${var.project}-${var.environment}"
     common_tags = {
