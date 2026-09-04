@@ -1,6 +1,7 @@
 resource "aws_instance" "ec2_instance" {
     ami = local.ami_id
     instance_type = local.instance_type
+    vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
     tags = merge(
         local.common_tags,
         {
