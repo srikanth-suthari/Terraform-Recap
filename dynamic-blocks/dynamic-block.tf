@@ -2,7 +2,7 @@ resource "aws_instance" "ec2_instance" {
     ami = local.ami_id
     instance_type = local.instance_type
     tags = merge(
-        local.ec2_tags,
+        local.common_tags,
         {
             Name = "${common_name}-dynamic-bolck-demo"
         }
