@@ -10,8 +10,8 @@ resource "aws_instance" "ec2_instance" {
 }
 
 resource "aws_security_group" "ec2_security_group" {
-    name = "${local.common_name}-allow-all"
-    description = "Allow these specific ports"
+    name = "${local.common_name}-dynamic-sg"
+    description = "Created using dynamic blocks"
 
     dynamic "ingress" {
         for_each = local.ingress_rules
@@ -31,4 +31,11 @@ resource "aws_security_group" "ec2_security_group" {
         protocol = "-1" #all protocols
         cidr_blocks = ["0.0.0.0/0"]
     }
+
+    tags = merge(
+        local.common_tags,
+        {
+            Name = "${local.common_name}-dynamic-sg-tags"
+        }
+    )
 }
