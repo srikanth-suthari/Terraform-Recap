@@ -1,6 +1,5 @@
 locals {
   # instances = ["mongodb", "mysql", "user", "cart"]
-  for_each = var.instances
   instance_type = "t3.micro"
   # Interpolation with variables is possible in locals
   common_name = "${locals.each.key}-${var.project}-${var.environment}" #instance_name-roboshop-dev
