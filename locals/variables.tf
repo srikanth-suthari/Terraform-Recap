@@ -6,6 +6,11 @@ variable "environment"{
     default = "dev"
 }
 
+variable "instances" {
+    type = list
+    default = ["mongodb", "mysql", "user", "cart"]
+}
+
 # Interpolation is not possible in variables
 # variable "common_name" {
 #     default = "${var.project}-${var.environment}"

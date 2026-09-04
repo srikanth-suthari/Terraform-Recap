@@ -1,8 +1,10 @@
 locals {
   # instances = ["mongodb", "mysql", "user", "cart"]
+  for_each = var.instances
   instance_type = "t3.micro"
   # Interpolation with variables is possible in locals
-  common_name = "${var.project}-${var.environment}"   #roboshop-dev
+  common_name = "${each.key}-${var.project}-${var.environment}" #instance_name-roboshop-dev
+  #common_name = "${var.project}-${var.environment}"   #roboshop-dev
   ec2_tags = merge(
     var.common_tags,
     {
