@@ -4,7 +4,7 @@ resource "aws_instance" "ec2_instance" {
     tags = merge(
         local.common_tags,
         {
-            Name = "${common_name}-dynamic-bolck-demo"
+            Name = "${local.common_name}-dynamic-bolck-demo"
         }
     )
 }
