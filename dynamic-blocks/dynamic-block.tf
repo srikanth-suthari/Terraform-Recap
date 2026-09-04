@@ -15,7 +15,7 @@ resource "aws_security_group" "ec2_security_group" {
 
     dynamic "ingress" {
         for_each = local.ingress_rules
-        iterator = rule
+        iterator = rule         # Renaming the iterator name from ingress to rule
 
         content {
             from_port = rule.value
