@@ -49,5 +49,7 @@ resource "aws_security_group" "ec2_security_group" {
         cidr_blocks = ["0.0.0.0/0"]
     }
 
-    tags = each.key
+    tags = {
+       Name = each.key
+    }
 }
