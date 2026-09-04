@@ -52,7 +52,7 @@ resource "aws_security_group" "ec2_security_group" {
     tags = merge(
         local.common_tags,
         {
-            Name = "${local.common_name}-dynamic-sg-tags"
+            Name = each.key
         }
     )
 }
