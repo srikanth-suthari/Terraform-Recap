@@ -10,7 +10,7 @@ resource "aws_instance" "ec2_instance" {
 }
 
 resource "aws_security_group" "ec2_security_group" {
-    name = "${common_name}-allow-all"
+    name = "${local.common_name}-allow-all"
     description = "Allow these specific ports"
 
     dynamic "ingress" {
