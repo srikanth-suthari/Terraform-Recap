@@ -24,9 +24,9 @@ variable "ingress_rules_map" {
     port        = number
     description = string
     }))
-    
+
     default = {
-        "HTTPS" = {port = 80, description = "Allwo port 80 for HTTP"}
+        "HTTP" = {port = 80, description = "Allwo port 80 for HTTP"}
         "HTTPS" = {port = 443, description = "Allwo port 443 for HTTPS"}
         "SSH" = {port = 22, description = "Allwo port 22 for SSH"}
     }
