@@ -33,9 +33,9 @@ resource "aws_security_group" "ec2_security_group" {
         iterator = rule
 
         content {
-            description = each.value.description
-            from_port = each.value.port
-            to_port = each.value.port
+            description = rule.value.description
+            from_port = rule.value.port
+            to_port = rule.value.port
             protocol = "tcp"
             cidr_blocks = ["0.0.0.0/0"]
         }

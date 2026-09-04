@@ -20,6 +20,11 @@ variable "ingress_rules_list" {
 }
 
 variable "ingress_rules_map" {
+    type = map(object({
+    port        = number
+    description = string
+    }))
+    
     default = {
         "HTTPS" = {port = 80, description = "Allwo port 80 for HTTP"}
         "HTTPS" = {port = 443, description = "Allwo port 443 for HTTPS"}
