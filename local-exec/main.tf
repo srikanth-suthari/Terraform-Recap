@@ -6,7 +6,11 @@ resource "aws_instance" "ec2_instance" {
     }
 
     provisioner "local-exec" {
-        command = "echo ${self.instance_type} > local-exec.txt "   #the commands should be in double quotes
+        command = "echo Instance is created"   #the commands should be in double quotes
         on_failure = continue
+    }
+
+    provisioner "local-exec" {
+        command = "echo ${self.instance_type} > local-exec.txt "
     }
 }
