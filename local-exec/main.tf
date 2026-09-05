@@ -13,4 +13,9 @@ resource "aws_instance" "ec2_instance" {
     provisioner "local-exec" {
         command = "echo ${self.instance_type} > local-exec.txt "
     }
+
+    provisioner "local-exec" {
+        command = "echo Instance is destroyed"
+        when = destroy    #Using when condition (when the instances is destroyed this provisioner will execute)
+    }
 }
