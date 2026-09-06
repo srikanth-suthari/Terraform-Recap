@@ -6,9 +6,8 @@ resource "aws_instance" "ec2_instance" {
     }
 
     #It requires a connection block and a privisioner block
-
     connection {
-        type = "ssh"
+        type     = "ssh"
         user     = "ec2-user"
         password = "DevOps321"
         host     = self.public_ip
@@ -18,6 +17,46 @@ resource "aws_instance" "ec2_instance" {
     }
 
     provisioner "remote-exec" {
+        inline = [
+            "sudo dnf install nginx -y",
+            "sudo systemctl start nginx"
+        ]
+    }
 
+    provisioner "local-exec" {
+        command = "echo ${self.public_ip}"
+        on_failure = continue
+    }
+
+    provisioner "remote-exec" {
+      inline = [
+        "sudo systemctl stop nginx",
+        "echo 'successfully stopped nginx server' "
+      ]
+      when = destroy
+    }
+    # Used this additonally
+    # provisioner "local-exec" {
+    #     command = "echo Instance is being destroyed and Nginx service is stopped"
+    #     when = destroy
+    # }
+}
+
+
+resource "aws_security_group" "remote-exec-demo" {
+    name = "remote-exec-demo"
+
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
     }
 }
